@@ -31,9 +31,11 @@ WebDriverWait(driver, 5).until(
 cookie = driver.find_element(By.ID, cookie_id)
 
 while True:
+# yaha .text isliye use kiya bcs hume element NAHI balki us elements ke text ko access karna hai
     cookie.click()
     cookies_count = driver.find_element(By.ID, cookies_id).text.split(" ")[0]
     cookies_count = int(cookies_count.replace(",", ""))
+# this is bcs numbers me comma ho sakte hai to vo comma hatane ke liye
     
     for i in range(4):
         product_price = driver.find_element(By.ID, product_price_prefix + str(i)).text.replace(",", "")
