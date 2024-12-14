@@ -25,6 +25,10 @@ WebDriverWait(driver, 5).until(
     EC.presence_of_element_located((By.PARTIAL_LINK_TEXT, "Tech With Tim"))
 )
 
+# partial link text me agar text as a part ho to bhi gina jaayega. If you want exact text to use By.LINK_TEXT (partial hata do). This would give the FIRST occurence.
+# agar saare occurrences as an array chahiye to use find_elements INSTEAD OF find_element
+
+
 link = driver.find_element(By.PARTIAL_LINK_TEXT, "Tech With Tim")
 link.click()
 
